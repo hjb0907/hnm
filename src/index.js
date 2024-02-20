@@ -8,7 +8,7 @@ import { faUser as solidUser, faUserRegular as regularUser } from '@fortawesome/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename='/hnm'>
     <App />
   </BrowserRouter>
 );
