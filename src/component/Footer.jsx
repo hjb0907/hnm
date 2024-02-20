@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link , useNavigate} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faTiktok, faYoutube, faPinterest, faFacebook, faComment } from '@fortawesome/free-brands-svg-icons';
-import { faComment as faCommentSolid } from '@fortawesome/free-solid-svg-icons'; // Import faComment from Free Solid set
+import { faInstagram, faTiktok, faYoutube, faPinterest, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faComment as faCommentSolid, faArrowRight } from '@fortawesome/free-solid-svg-icons'; // Import faComment from Free Solid set
 
 
 
@@ -66,6 +66,7 @@ const Footer = () => {
           </li>
           <li>
             <Link to='/'>지금 가입하기</Link>
+            <FontAwesomeIcon icon={faArrowRight} />
           </li>
         </ul>
       </div>
