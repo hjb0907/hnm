@@ -36,7 +36,7 @@ const ProductDetail = () => {
 
   const getProductDetail = async () => {
     try {
-      const url = `http://localhost:4000/products/${id}`;
+      const url = `http://localhost:5000/products/${id}`;
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Failed to fetch product');

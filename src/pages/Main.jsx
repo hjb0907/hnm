@@ -11,7 +11,7 @@ const Main = () => {
 
   const getProducts  = async() =>{
     let keywd = query.get('q') || '';
-    let url = `http://localhost:4000/products?q=${keywd}`;
+    let url = `http://localhost:5000/products?q=${keywd}`;
 
     try {
       const response = await fetch(url);
@@ -25,10 +25,7 @@ const Main = () => {
   }
 
   useEffect(() => {
-    const fetchData = async () => {
-      await getProducts();   
-    };
-    fetchData();
+    getProducts()
   }, [query]);
 
   return (
@@ -36,7 +33,7 @@ const Main = () => {
       <Container>
         <Row>
           {products.map((product, index) => (
-            <Col lg={3} md={3} key={index}>
+            <Col lg={3} key={index}>
               <Product item={product} />
             </Col>
           ))}
