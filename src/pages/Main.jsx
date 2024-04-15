@@ -11,7 +11,7 @@ const Main = () => {
 
   const getProducts  = async() =>{
     let keywd = query.get('q') || '';
-    let url = `http://localhost:5000/products?q=${keywd}`;
+    let url = `https://my-json-server.typicode.com/hjb0907/hnm/products?q=${keywd}`;
 
     try {
       const response = await fetch(url);
