@@ -41,9 +41,7 @@ const Footer = () => {
           <li>
             <h5>기업 정보</h5>
             {list[1].row.map((category, idx) => (
-              <li key={idx}>
-                <a href={list[1].link[idx]}>{category}</a>
-              </li>
+              <a href={list[1].link[idx]}  key={idx}>{category}</a>
             ))}
           </li>
         </ul>
