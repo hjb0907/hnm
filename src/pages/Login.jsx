@@ -17,7 +17,7 @@ const Login = ({setAuthes}) => {
       setError('Please enter email and password');
       return;
     }
-    alert('로그인 성공 !!');
+    alert('로그인 되었습니다.');
     navigate('/');
     setAuthes(true);
   };

@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header authes={authes}/>
+      <Header authes={authes} setAuthes={setAuthes}/>
       <Routes>
         <Route path='/' element={<Main/>}></Route>
         <Route path='/login' element={<Login setAuthes={setAuthes}/>}></Route>

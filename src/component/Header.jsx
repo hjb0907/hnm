@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faUser as regularUser } from '@fortawesome/free-regular-svg-icons';
 
-const Header = ({authes}) => {
+const Header = ({authes, setAuthes}) => {
   const [userHover,setUserHover] = useState(false);
   const list = [
     { text: 'Women', link: '/' },
@@ -27,6 +27,14 @@ const Header = ({authes}) => {
     navigate('/login');
   }
 
+  const gotoLogout = () => {
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm("로그아웃을 하시겠습니까?")) {
+      setAuthes(false);
+      alert('로그아웃이 완료 되었습니다.')
+    }
+  }
+
   const gotoHome = () =>{
     navigate('/')
   }
@@ -45,14 +53,22 @@ const Header = ({authes}) => {
       onMouseLeave={() => setUserHover(false)}>
           <span onClick={gotoLogin} className='login_icon'>
           {userHover ? (
-              <FontAwesomeIcon icon={faUser} />
-            ) : (
               <FontAwesomeIcon icon={regularUser} />
+            ) : (
+              <FontAwesomeIcon icon={faUser} />
             )}
             {
               authes === true? '마이페이지' : '로그인'
             }
           </span>
+          {
+            authes === true? (
+              <span className='ml5' onClick={gotoLogout}>
+                <FontAwesomeIcon icon={regularUser} />
+                로그아웃
+              </span>
+            ):null
+          }
       </div>
       <div className="logo" onClick={gotoHome}>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvlG29yTKHF7G9r7otV0-vmcC9bJ3Zr9ewZGneBnCORw&s" alt="" width={100}/>
