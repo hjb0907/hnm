@@ -72,13 +72,14 @@ const ProductDetail = () => {
         <Row lg={2}>
           <Col>
             <div>
-              <img src={product?.img2} alt="" />
+              <img src={product?.img} alt="" />
             </div>
             <div className='img_wrap'>
+              <img src={product?.img2} alt="" />
               <img src={product?.img3} alt="" />
-              <img src={product?.img4} alt="" />
             </div>
             <div>
+              <img src={product?.img4} alt="" />
               <img src={product?.img5} alt="" />
             </div>
             <div>
