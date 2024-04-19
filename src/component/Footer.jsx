@@ -32,10 +32,8 @@ const Footer = () => {
             <h5>카테고리</h5>
           </li>
           {list[0].row.map((category, idx) => (
-              <li key={idx}>
-                <a href={list[0].link[idx]}>{category}</a>
-              </li>
-            ))}
+            <a href={list[0].link[idx]} key={idx}>{category}</a>
+          ))}
         </ul>
         <ul className="row02">
           <li>
@@ -49,9 +47,7 @@ const Footer = () => {
           <li>
             <h5>고객지원</h5>
             {list[2].row.map((category, idx) => (
-              <li key={idx}>
-                <a href={list[2].link[idx]}>{category}</a>
-              </li>
+              <a href={list[2].link[idx]} key={idx}>{category}</a>
             ))}
           </li>
         </ul>

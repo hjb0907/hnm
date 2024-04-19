@@ -4,9 +4,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import {useNavigate} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authenticateAction } from '../redux/action/authenticateAction';
 
 const Login = ({setAuthes}) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -18,11 +22,11 @@ const Login = ({setAuthes}) => {
       return;
     }
     alert('로그인 되었습니다.');
+    dispatch(authenticateAction.login(email, password))
     navigate('/');
     setAuthes(true);
   };
 
-  
   return (
     <div className='login'>
       <Container>

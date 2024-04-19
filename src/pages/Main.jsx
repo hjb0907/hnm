@@ -4,24 +4,18 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../component/Product';
+import {productAction} from '../redux/action/ProductAction'
+import { useDispatch, useSelector } from 'react-redux';
 
 const Main = () => {
-  const [products,setProducts] = useState([]);
+  const products = useSelector((state) => state.product.products)
   const [query,setQuery] = useSearchParams();
 
-  const getProducts  = async() =>{
+  const dispatch = useDispatch();
+  const getProducts  = () =>{
     let keywd = query.get('q') || '';
-    let url = `https://my-json-server.typicode.com/hjb0907/hnm/products?q=${keywd}`;
-
-    try {
-      const response = await fetch(url);
-      if (response.ok) {
-        const data = await response.json();
-        setProducts(data);
-      }
-    } catch (error) {
-      console.error('Error fetching products data:', error);
-    }
+    dispatch(productAction.getProducts(keywd))
+    
   }
 
   useEffect(() => {
